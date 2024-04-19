@@ -1,13 +1,11 @@
 import StudentListActions from './StudentListActions'
 
-export default function StudentListItem({student, onDeleteStudent, onEditStudent}) {
+export default function StudentListItem({ student }) {
     return (
         <li>
             {student.naam} {' '}
             <StudentListActions
                 student={student}
-                onEditStudent={onEditStudent}
-                onDeleteStudent={() => onDeleteStudent(student.id)}
             />
         </li>
     )

@@ -1,12 +1,16 @@
+import { useContext } from "react"
 import { useState } from "react"
+import { StudentContext } from "./context/studentContext"
 
-export default function AddStudentForm({onSubmit}) {
+export default function AddStudentForm() {
+
+    const { handleAddStudent } = useContext(StudentContext)
 
     const [input, setInput] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        onSubmit(input)
+        handleAddStudent(input)
         setInput('')
     }
 
